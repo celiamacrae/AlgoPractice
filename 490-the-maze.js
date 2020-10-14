@@ -66,7 +66,7 @@ var hasPath = function(maze, start, destination) {
     return up || down || left || right
   }
 
-  describe('hasPath', () => {
+describe('hasPath', () => {
     it('Test case 1', () => {
         expect(hasPath([[0,0,1,0,0],[0,0,0,0,0],[0,0,0,1,0],[1,1,0,1,1],[0,0,0,0,0]], [0,4], [4,4])).to.equal(true);
     });

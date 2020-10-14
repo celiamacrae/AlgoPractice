@@ -24,3 +24,63 @@ X can be placed before L (50) and C (100) to make 40 and 90.
 C can be placed before D (500) and M (1000) to make 400 and 900.
 Given a roman numeral, convert it to an integer.
 */
+
+var romanToInt = function(s) {
+    
+    let values = {
+        'M' : 1000,
+        'D' : 500,
+        'C' : 100,
+        'L' : 50,
+        'X' : 10,
+        'V' : 5,
+        'I' : 1,
+        'IV' : 4,
+        'IX' : 9,
+        'XL' : 40,
+        'XC' : 90,
+        'CD' : 400,
+        'CM' : 900
+    }
+    
+    let sum = 0
+    let ptr = 0
+    
+    while(ptr < s.length){
+        let singleSymbol = s.substring(ptr, ptr+1)
+        if(ptr < s.length -1){
+            let doubleSymbol = s.substring(ptr, ptr+2)
+            if(values.hasOwnProperty(doubleSymbol)){
+                sum += values[doubleSymbol]
+                ptr+=2
+            }else{
+                sum += values[singleSymbol]
+                ptr++
+            }
+        }else{
+            sum += values[singleSymbol]
+            ptr++    
+        }
+    }
+    return sum  
+};
+
+
+
+describe('romanToInt', () => {
+    it('Test case 1', () => {
+        expect(romanToInt("III")).to.equal(3);
+    });
+    it('Test case 2', () => {
+        expect(romanToInt("IV")).to.equal(4);
+    });
+    it('Test case 3', () => {
+        expect(romanToInt("IX")).to.equal(9);
+    });
+    it('Test case 4', () => {
+        expect(romanToInt("LVIII")).to.equal(58);
+    });
+    it('Test case 5', () => {
+        expect(romanToInt("MCMXCIV")).to.equal(1994);
+    });
+}); 
