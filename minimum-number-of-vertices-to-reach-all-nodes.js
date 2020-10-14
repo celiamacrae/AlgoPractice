@@ -1,3 +1,5 @@
+const { expect } = require('chai');
+
 /*
 1557. Minimum Number of Vertices to Reach All Nodes
 
@@ -23,3 +25,12 @@ var findSmallestSetOfVertices = function(n, edges) {
     
     return [... nodes]
 };
+
+describe('findSmallestSetOfVerticies', () => {
+    it('Test case 1', () => {
+      expect(findSmallestSetOfVertices(6, [[0,1],[0,2],[2,5],[3,4],[4,2]])).to.deep.equal([0,3]);
+    });
+    it('Test case 2', () => {
+        expect(findSmallestSetOfVertices(5, [[0,1],[2,1],[3,1],[1,4],[2,4]])).to.deep.equal([0,2,3]);
+    });
+}); 
