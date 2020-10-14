@@ -3,6 +3,8 @@ const { expect } = require('chai');
 /*
 1557. Minimum Number of Vertices to Reach All Nodes
 
+LEETCODE MEDIUM
+
 https://leetcode.com/problems/minimum-number-of-vertices-to-reach-all-nodes/
 
 Given a directed acyclic graph, with n vertices numbered from 0 to n-1, and an array edges where edges[i] = [fromi, toi] represents a directed edge from node fromi to node toi.
