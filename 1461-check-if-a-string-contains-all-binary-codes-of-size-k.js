@@ -14,6 +14,13 @@ Return True if every binary code of length k is a substring of s. Otherwise, ret
 
 var hasAllCodes = function(s, k) {
     
+    let codeSet = new Set()
+    
+    for(let i=0; i<=s.length -k; i++){
+        codeSet.add(s.substring(i, i+k))
+    }
+    
+    return codeSet.size === 2**k
 };
 
 describe('hasAllCodes', () => {
