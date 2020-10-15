@@ -15,3 +15,21 @@ Return True if every binary code of length k is a substring of s. Otherwise, ret
 var hasAllCodes = function(s, k) {
     
 };
+
+describe('hasAllCodes', () => {
+    it('Test case 1', () => {
+        expect(hasAllCodes("00110110", 2)).to.equal(true);
+    });
+    it('Test case 2', () => {
+        expect(hasAllCodes("00110", 2)).to.equal(true);
+    });
+    it('Test case 3', () => {
+        expect(hasAllCodes("0110", 1)).to.equal(true);
+    });
+    it('Test case 4', () => {
+        expect(hasAllCodes("0110", 2)).to.equal(false);
+    });
+    it('Test case 5', () => {
+        expect(hasAllCodes("0000000001011100", 4)).to.equal(false);
+    });
+}); 
