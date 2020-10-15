@@ -41,7 +41,7 @@ function generateOutput(pairs){
     }
 }
 
-describe('validIPAddress', () => {
+describe('findContestMatch', () => {
     it('Test case 1', () => {
         expect(findContestMatch(4)).to.equal("((1,4),(2,3))");
     });
