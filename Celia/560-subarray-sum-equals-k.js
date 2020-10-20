@@ -32,6 +32,13 @@ var subarraySum = function(nums, k) {
     return count
 };
 
+/*
+
+Note: good resource for prefix sum
+https://www.youtube.com/watch?v=Ofl4KgFhLsM
+
+*/
+
 describe('subarraySum', () => {
     it('Test case 1', () => {
         expect(subarraySum([1,1,1], 2)).to.equal(2);
