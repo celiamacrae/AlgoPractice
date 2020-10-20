@@ -13,3 +13,22 @@ Reverse the strings in each pair of matching parentheses, starting from the inne
 
 Your result should not contain any brackets.
 */
+
+var reverseParentheses = function(s) {
+
+}
+
+describe('reverseParentheses', () => {
+    it('Test case 1', () => {
+        expect(reverseParentheses("(abcd)")).to.equal("dcba");
+    });
+    it('Test case 2', () => {
+        expect(reverseParentheses("(u(love)i)")).to.equal("iloveu");
+    });
+    it('Test case 3', () => {
+        expect(reverseParentheses("(ed(et(oc))el)")).to.equal("leetcode");
+    });
+    it('Test case 4', () => {
+        expect(reverseParentheses("a(bcdefghijkl(mno)p)q")).to.equal("apmnolkjihgfedcbq");
+    });
+}); 
