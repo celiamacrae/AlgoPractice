@@ -15,3 +15,16 @@ For example, "{a,b,c}d{e,f}" represents the list ["ade", "adf", "bde", "bdf", "c
 
 Return all words that can be formed in this manner, in lexicographical order.
 */
+
+var expand = function(S) {
+
+}
+
+describe('expand', () => {
+    it('Test case 1', () => {
+        expect(expand("{a,b}c{d,e}f")).to.deep.equal(["acdf","acef","bcdf","bcef"]);
+    });
+    it('Test case 2', () => {
+        expect(expand("abcd")).to.deep.equal(["abcd"]);
+    });
+}); 
