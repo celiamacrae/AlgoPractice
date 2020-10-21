@@ -16,9 +16,37 @@ For example, "{a,b,c}d{e,f}" represents the list ["ade", "adf", "bde", "bdf", "c
 Return all words that can be formed in this manner, in lexicographical order.
 */
 
-var expand = function(S) {
-
-}
+var expand = function(S) {   
+    let res = []
+    
+    for(let i=0; i<S.length; i++){
+        let options = []
+        if(S[i] === '{'){
+            i++
+            while(S[i] !== '}'){
+                if(S[i] !== ','){
+                    options.push(S[i])   
+                }
+                i++
+            }
+        }else{
+            options.push(S[i])
+        }
+        let newRes = []
+        if(res.length === 0){
+            res = options
+        }else{
+            for(let i=0; i<res.length; i++){
+                for(let j=0; j<options.length; j++){
+                    newRes.push(res[i] + options[j])
+                }
+            } 
+            res = newRes
+        }   
+    }
+    
+    return res.sort()
+};
 
 describe('expand', () => {
     it('Test case 1', () => {
