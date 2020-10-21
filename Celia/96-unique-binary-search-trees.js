@@ -22,3 +22,13 @@ Given n = 3, there are a total of 5 unique BST's:
     /     /       \                 \
    2     1         2                 3
 */
+
+var numTrees = function(n) { 
+
+}
+
+describe('numTrees', () => {
+    it('Test case 1', () => {
+        expect(numTrees(3)).to.equal(5);
+    });
+}); 
