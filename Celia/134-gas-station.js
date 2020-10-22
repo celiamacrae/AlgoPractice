@@ -19,3 +19,17 @@ If there exists a solution, it is guaranteed to be unique.
 Both input arrays are non-empty and have the same length.
 Each element in the input arrays is a non-negative integer.
 */
+
+var canCompleteCircuit = function(gas, cost) {
+
+}
+
+
+describe('canCompleteCircuit', () => {
+    it('Test case 1', () => {
+        expect(canCompleteCircuit([1,2,3,4,5], [3,4,5,1,2])).to.equal(3);
+    });
+    it('Test case 2', () => {
+        expect(canCompleteCircuit([2,3,4], [3,4,3])).to.equal(-1);
+    });
+}); 
