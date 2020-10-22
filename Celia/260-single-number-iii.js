@@ -13,17 +13,33 @@ Follow up: Your algorithm should run in linear runtime complexity. Could you imp
 */
 
 var singleNumber = function(nums) {
-
-}
+    let ht = {}
+    
+    for(let i=0; i<nums.length; i++){
+        if(! ht.hasOwnProperty(nums[i])){
+            ht[nums[i]] = 0
+        }
+        ht[nums[i]] ++
+    }
+    
+    let res = []
+    
+    Object.keys(ht).forEach(key => {
+        if(ht[key] === 1){
+            res.push(parseInt(key))
+        }
+    })
+    return res  
+};
 
 describe('singleNumber', () => {
     it('Test case 1', () => {
         expect(singleNumber([1,2,1,3,2,5])).to.deep.equal([3,5]);
     });
     it('Test case 2', () => {
-        expect(singleNumber([-1,0])).to.deep.equal([-1,0]);
+        expect(singleNumber([-1,0])).to.deep.equal([0, -1]);
     });
     it('Test case 3', () => {
-        expect(singleNumber([0,1])).to.deep.equal([1,0]);
+        expect(singleNumber([0,1])).to.deep.equal([0,1]);
     });
 }); 
