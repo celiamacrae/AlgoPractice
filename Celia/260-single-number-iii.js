@@ -11,3 +11,19 @@ Given an integer array nums, in which exactly two elements appear only once and 
 
 Follow up: Your algorithm should run in linear runtime complexity. Could you implement it using only constant space complexity?
 */
+
+var singleNumber = function(nums) {
+
+}
+
+describe('singleNumber', () => {
+    it('Test case 1', () => {
+        expect(singleNumber([1,2,1,3,2,5])).to.deep.equal([3,5]);
+    });
+    it('Test case 2', () => {
+        expect(singleNumber([-1,0])).to.deep.equal([-1,0]);
+    });
+    it('Test case 3', () => {
+        expect(singleNumber([0,1])).to.deep.equal([1,0]);
+    });
+}); 
