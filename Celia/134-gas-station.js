@@ -21,8 +21,26 @@ Each element in the input arrays is a non-negative integer.
 */
 
 var canCompleteCircuit = function(gas, cost) {
-
-}
+    let totalGas = 0
+    let idx = 0
+    let curr = 0
+  
+    for(let i=0; i<gas.length; i++){
+      curr += gas[i] - cost[i]
+      totalGas += gas[i] - cost[i]
+  
+      if(curr < 0){
+        idx = i+1
+        curr = 0
+      }
+    }
+  
+    if(totalGas < 0){
+      return -1
+    }
+    return idx   
+  };
+  
 
 
 describe('canCompleteCircuit', () => {
