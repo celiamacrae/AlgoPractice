@@ -15,7 +15,7 @@ Return the maximum number of events you can attend.
 */
 
 var maxEvents = function(events) {
-    
+
 };
 
 describe('maxEvents', () => {
