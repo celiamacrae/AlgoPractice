@@ -13,3 +13,25 @@ You can attend an event i at any day d where startTimei <= d <= endTimei. Notice
 
 Return the maximum number of events you can attend.
 */
+
+var maxEvents = function(events) {
+    
+};
+
+describe('maxEvents', () => {
+    it('Test case 1', () => {
+        expect(maxEvents([[1,2],[2,3],[3,4]])).to.equal(3);
+    });
+    it('Test case 2', () => {
+        expect(maxEvents([[1,2],[2,3],[3,4],[1,2]])).to.equal(4);
+    });
+    it('Test case 3', () => {
+        expect(maxEvents([[1,4],[4,4],[2,2],[3,4],[1,1]])).to.equal(4);
+    });
+    it('Test case 4', () => {
+        expect(maxEvents([[1,100000]])).to.equal(1);
+    });
+    it('Test case 5', () => {
+        expect(maxEvents([[1,1],[1,2],[1,3],[1,4],[1,5],[1,6],[1,7]])).to.equal(7);
+    });
+}); 
