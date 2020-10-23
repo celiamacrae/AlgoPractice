@@ -12,9 +12,16 @@ Given words first and second, consider occurrences in some text of the form "fir
 For each such occurrence, add "third" to the answer, and return the answer.
 */
 
-var findOcurrences = function(text, first, second) {
-
-}
+var findOcurrences = function(text, first, second) { 
+    let third = []
+    let words = text.split(' ')
+    for(let i=0; i<words.length -2; i++){
+        if(words[i] === first && words[i+1] === second){
+            third.push(words[i+2])
+        }
+    }
+    return third
+};
 
 describe('findOcurrences', () => {
     it('Test case 1', () => {
