@@ -15,7 +15,32 @@ Return the maximum number of events you can attend.
 */
 
 var maxEvents = function(events) {
+    let visited = {}
 
+    events.sort((a,b) => {
+        if(a[1] != b[1]){
+            return a[1] - b[1]
+        }
+        return a[0] - b[0]
+    })
+
+    let res = 0
+
+    for(let i=0; i<events.length; i++){
+        let event = events[i]
+        let start = event[0]
+        let end = event[1]
+
+        for(let j=start; j<=end; j++){
+            if(! visited.hasOwnProperty(j)){
+                visited[j] = true
+                res ++
+                break;
+            }
+        }
+    }
+
+    return res
 };
 
 describe('maxEvents', () => {
