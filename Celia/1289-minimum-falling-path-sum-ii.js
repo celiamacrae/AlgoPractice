@@ -13,7 +13,25 @@ Return the minimum sum of a falling path with non-zero shifts.
 */
 var minFallingPathSum = function(arr) {
 
-}
+    for(let i=1; i<arr.length; i++){
+        let mins = {one: Infinity, two: Infinity}
+        for(let j=0; j<arr[0].length; j++){
+            if(arr[i-1][j] < mins.one){
+                mins.two = mins.one
+                mins.one = arr[i-1][j]
+            }else if(arr[i-1][j] < mins.two){
+                mins.two = arr[i-1][j]
+            }
+        }
+        
+        for(let j=0; j<arr[0].length; j++){
+            arr[i][j] += arr[i-1][j] === mins.one ? mins.two : mins.one
+        }
+        
+        
+    }
+    return Math.min(...arr[arr.length -1])
+};
 
 describe('minFallingPathSum', () => {
     it('Test case 1', () => {
