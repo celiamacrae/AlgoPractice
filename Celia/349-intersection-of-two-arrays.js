@@ -11,8 +11,17 @@ Given two arrays, write a function to compute their intersection.
 */
 
 var intersection = function(nums1, nums2) {
-
-}
+    let setA = new Set(nums1)
+    let intersect = new Set()
+    
+    for(let i=0; i<nums2.length; i++){
+        if(setA.has(nums2[i])){
+            intersect.add(nums2[i])
+        }
+    }
+    
+    return [... intersect]
+};
 
 describe('intersection', () => {
     it('Test case 1', () => {
