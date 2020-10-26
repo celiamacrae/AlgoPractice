@@ -11,7 +11,29 @@ Given a list of unique words, return all the pairs of the distinct indices (i, j
 */
 
 var palindromePairs = function(words) {
+    let output = []
+    
+    for(let i=0; i<words.length -1; i++){
+        for(let j=i+1; j<words.length; j++){
+            if(isPal(words[i], words[j])){
+                output.push([i, j])
+            }
+            if(isPal(words[j], words[i])){
+                output.push([j, i])
+            }
+        }
+    }
+    return output
+};
 
+function isPal(s1, s2){
+    let word = s1 + s2
+    for(let i=0; i< word.length /2 ; i++){
+        if(word[i] != word[word.length -1 -i]){
+            return false
+        }
+    }
+    return true
 }
 
 describe('minFallingPathSum', () => {
