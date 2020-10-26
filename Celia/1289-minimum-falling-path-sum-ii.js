@@ -11,3 +11,12 @@ Given a square grid of integers arr, a falling path with non-zero shifts is a ch
 
 Return the minimum sum of a falling path with non-zero shifts.
 */
+var minFallingPathSum = function(arr) {
+
+}
+
+describe('minFallingPathSum', () => {
+    it('Test case 1', () => {
+        expect(minFallingPathSum([[1,2,3],[4,5,6],[7,8,9]])).to.equal(13);
+    });
+}); 
