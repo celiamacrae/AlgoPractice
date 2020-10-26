@@ -11,6 +11,7 @@ Given a square grid of integers arr, a falling path with non-zero shifts is a ch
 
 Return the minimum sum of a falling path with non-zero shifts.
 */
+
 var minFallingPathSum = function(arr) {
 
     for(let i=1; i<arr.length; i++){
