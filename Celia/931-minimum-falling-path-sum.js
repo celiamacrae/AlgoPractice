@@ -13,8 +13,21 @@ A falling path starts at any element in the first row, and chooses one element f
 */
 
 var minFallingPathSum = function(A) {
-
-}
+    for(let i=1; i<A.length; i++){
+        for(let j=0; j<A[0].length; j++){
+            let min = A[i-1][j]
+            if(j > 0 && A[i-1][j-1] < min){
+                min = A[i-1][j-1]
+            }
+            if(j< A[0].length -1 && A[i-1][j+1] < min){
+                min = A[i-1][j+1]
+            }
+            A[i][j] += min
+        }
+    }
+    
+    return Math.min(... A[A.length -1])
+};
 
 describe('minFallingPathSum', () => {
     it('Test case 1', () => {
