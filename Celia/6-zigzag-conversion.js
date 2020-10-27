@@ -18,3 +18,19 @@ Write the code that will take a string and make this conversion given a number o
 
 string convert(string s, int numRows);
 */
+
+var convert = function(s, numRows) {
+
+}
+
+describe('convert', () => {
+    it('Test case 1', () => {
+        expect(convert("PAYPALISHIRING", 3)).to.equal("PAHNAPLSIIGYIR");
+    });
+    it('Test case 2', () => {
+        expect(convert("PAYPALISHIRING", 4)).to.equal("PINALSIGYAHRPI");
+    });
+    it('Test case 3', () => {
+        expect(convert("A", 1)).to.equal("A");
+    });
+}); 
