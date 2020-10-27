@@ -19,12 +19,34 @@ Your class will be called like this: MyCalendar cal = new MyCalendar(); MyCalend
 */
 
 var MyCalendar = function() {
-   
+    this.intervals = []
 };
 
 MyCalendar.prototype.book = function(start, end) {
 
-}
+    if(this.intervals.length == 0){
+        this.intervals.push([start, end])
+        return true
+    }
+
+    else{
+
+        for(let i=0; i<this.intervals.length; i++){
+            if(start >= this.intervals[i][0] && start < this.intervals[i][1]){
+                return false
+            }
+            if(end > this.intervals[i][0] && end <= this.intervals[i][1]){
+                return false
+            }
+            if(start <= this.intervals[i][0] && end >= this.intervals[i][1]){
+                return false
+            }
+        }
+        this.intervals.push([start, end])
+        return true
+    }
+    
+};
 
 describe('MyCalendar', () => {
 
