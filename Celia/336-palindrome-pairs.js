@@ -36,7 +36,7 @@ function isPal(s1, s2){
     return true
 }
 
-describe('minFallingPathSum', () => {
+describe('palindromePairs', () => {
     it('Test case 1', () => {
         expect(palindromePairs(["abcd","dcba","lls","s","sssll"])).to.deep.equal([[0,1],[1,0],[3,2],[2,4]]);
     });
