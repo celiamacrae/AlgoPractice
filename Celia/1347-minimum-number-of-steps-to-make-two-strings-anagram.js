@@ -13,6 +13,7 @@ Return the minimum number of steps to make t an anagram of s.
 
 An Anagram of a string is a string that contains the same characters with a different (or the same) ordering.
 */
+
 var minSteps = function(s, t) {
     
     let start = {}
