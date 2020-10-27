@@ -17,3 +17,26 @@ For each call to the method MyCalendar.book, return true if the event can be add
 
 Your class will be called like this: MyCalendar cal = new MyCalendar(); MyCalendar.book(start, end)
 */
+
+var MyCalendar = function() {
+   
+};
+
+MyCalendar.prototype.book = function(start, end) {
+
+}
+
+describe('MyCalendar', () => {
+
+    let calendarInstance = new MyCalendar()
+
+    it('Test case 1', () => {
+        expect(calendarInstance.book(10, 20)).to.equal(true);
+    });
+    it('Test case 2', () => {
+        expect(calendarInstance.book(15, 25)).to.equal(false);
+    });
+    it('Test case 3', () => {
+        expect(calendarInstance.book(20, 30)).to.equal(true);
+    });
+}); 
