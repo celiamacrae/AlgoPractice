@@ -14,8 +14,38 @@ Return the minimum number of steps to make t an anagram of s.
 An Anagram of a string is a string that contains the same characters with a different (or the same) ordering.
 */
 var minSteps = function(s, t) {
-
-}
+    
+    let start = {}
+    let end = {}
+    
+    for(let i=0; i<s.length; i++){
+        if(!start.hasOwnProperty(s[i])){
+            start[s[i]] = 0
+        }
+        if(!end.hasOwnProperty(t[i])){
+            end[t[i]] = 0
+        }
+        end[t[i]] +=1
+        start[s[i]] += 1
+    }
+    
+    let startLetters = Object.keys(start)
+    let count = 0
+    
+    for(let i=0; i<startLetters.length; i++){
+        let sCount = start[startLetters[i]]
+        let eCount = 0
+        if(end.hasOwnProperty(startLetters[i])){
+            eCount = end[startLetters[i]]
+        }
+        if(sCount - eCount > 0){
+            count += sCount - eCount
+        }
+    }
+    
+    return count
+    
+};
 
 describe('minSteps', () => {
     it('Test case 1', () => {
