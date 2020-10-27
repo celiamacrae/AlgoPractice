@@ -20,8 +20,31 @@ string convert(string s, int numRows);
 */
 
 var convert = function(s, numRows) {
-
-}
+    if(numRows === 1){
+        return s
+    }
+    let rows = new Array(numRows).fill('')
+    
+    let row = 0
+    let dir = 'up'
+    
+    for(let i=0; i<s.length; i++){
+        rows[row] += s[i]
+        if(dir === 'up' && row < numRows -1){
+            row = row + 1
+        }else if(dir === 'up' && row === numRows-1){
+            row = row -1
+            dir = 'down'
+        }else if(dir === 'down' && row > 0){
+            row = row-1
+        }else if(dir === 'down' && row === 0){
+            row = row + 1
+            dir = 'up'
+        }
+    }
+    
+    return rows.join('')
+};
 
 describe('convert', () => {
     it('Test case 1', () => {
