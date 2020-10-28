@@ -15,3 +15,12 @@ You may assume the given input string is always valid. For example, "01:34", "12
 var nextClosestTime = function(time) {
     
 };
+
+describe('nextClosestTime', () => {
+    it('Test case 1', () => {
+        expect(nextClosestTime("19:34")).to.equal("19:39");
+    });
+    it('Test case 2', () => {
+        expect(nextClosestTime("23:59")).to.equal("22:22");
+    });
+}); 
