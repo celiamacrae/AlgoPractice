@@ -13,8 +13,34 @@ Given two integers low and high, find and return a sorted list of all the Steppi
 */
 
 var countSteppingNumbers = function(low, high) {
-
-}
+    let res = []
+    
+    const find = (current) => {
+        if(current > high){
+            return
+        }
+        if(current >= low){
+            res.push(current)
+        }
+        
+        const lastDigit = current % 10
+        if(lastDigit > 0){
+            find(current * 10 + lastDigit -1)
+        }
+        if(lastDigit < 9){
+            find(current * 10 + lastDigit + 1)
+        }
+    }
+    
+    if(low === 0){
+        res.push(0)
+    }
+    for(let i=1; i<10; i++){
+        find(i)
+    }
+    
+    return res.sort((a,b) => a-b)
+};
 
 describe('countSteppingNumbers', () => {
     it('Test case 1', () => {
